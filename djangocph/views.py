@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 
 from . import forms
 
+
 class Website(TemplateView):
     template_name = 'website.html'
 
