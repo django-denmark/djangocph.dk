@@ -1,0 +1,4 @@
+DEBUG=true
+SECRET_KEY=secretstuff
+DATABASE_URL=sqlite:///db.sqlite
+ALLOWED_HOSTS=0.0.0.0, 127.0.0.1, localhost
