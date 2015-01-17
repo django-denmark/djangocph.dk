@@ -12,25 +12,28 @@ class ContactForm(forms.Form):
 
     def send_email(self):
         name = self.cleaned_data['name'],
-        msg = self.cleaned_data['message']
+        message = self.cleaned_data['message']
         email = self.cleaned_data['email']
 
-        msg = "Name: {0}, Email: {1}, Message: {2}".format(
+        log_message = "Name: {0}, Email: {1}, Message: {2}".format(
             name,
             email,
-            msg,
+            message,
         )
 
-        logger.info(msg)
+        logger.info(log_message)
 
-        msg = "Name: {0}\n Email: {1}\n\n, Message: {2}".format(
+        email_message = "Name: {0}\n Email: {1}\n\n, Message: {2}".format(
             name,
             email,
-            msg,
+            message,
         )
 
         send_mail(
-            'Message from {0}'.format(email), msg, 'team@djangocph.com',
-            ['team@djangocph.dk'], fail_silently=False
+            'Message from {0}'.format(email),
+            email_message,
+            'team@djangocph.com',
+            ['team@djangocph.dk'],
+            fail_silently=False
         )
         return True
