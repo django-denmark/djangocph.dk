@@ -1,18 +1,17 @@
-from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
+from django.contrib import messages
+
 
 from . import forms
 
 
-class Website(TemplateView):
-    template_name = 'website.html'
-
-
-class ContactView(FormView):
-    template_name = 'contact.html'
+class IndexView(FormView):
+    template_name = 'base.html'
     form_class = forms.ContactForm
-    success_url = '/thanks/'
+    success_url = '/'
 
     def form_valid(self, form):
         form.send_email()
-        return super(ContactView, self).form_valid(form)
+        msg = "We have received your message, we will now decide your fate"
+        messages.add_message(self.request, messages.INFO, msg)
+        return super(IndexView, self).form_valid(form)
