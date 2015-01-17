@@ -5,3 +5,4 @@ __pycache__/
 .idea/
 .ropeproject/
 djangocph_dk/locals.py
+.env
