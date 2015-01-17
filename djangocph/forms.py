@@ -9,6 +9,9 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea)
 
     def send_email(self):
-        msg = "Name: {0}, Message: {1}".format(self.name, self.message)
+        msg = "Name: {0}, Message: {1}".format(
+            self.cleaned_data['name'],
+            self.cleaned_data['message']
+        )
         logger.info(msg)
         return True
