@@ -15,7 +15,7 @@ class ContactForm(forms.Form):
         msg = self.cleaned_data['message']
         email = self.cleaned_data['email']
 
-        msg = "Name: {0}, Email: {1}, Message: {1}".format(
+        msg = "Name: {0}, Email: {1}, Message: {2}".format(
             name,
             email,
             msg,
@@ -23,7 +23,7 @@ class ContactForm(forms.Form):
 
         logger.info(msg)
 
-        msg = "Name: {0}\n Email: {1}\n\n, Message: {1}".format(
+        msg = "Name: {0}\n Email: {1}\n\n, Message: {2}".format(
             name,
             email,
             msg,
