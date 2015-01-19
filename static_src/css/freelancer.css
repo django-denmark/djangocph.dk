@@ -22,7 +22,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #ddd;
+    color: #18bc9c;
 }
 
 h1,
@@ -269,6 +269,12 @@ section.success {
     background: #fff;
 }
 
+.btn-success {
+    color: #2c3e50;
+    background-color: #fff;
+    border-color: #fff;
+}
+
 .floating-label-form-group {
     position: relative;
     margin-bottom: 0;
@@ -288,6 +294,7 @@ section.success {
     background: 0 0;
     box-shadow: none!important;
     resize: none;
+    color: #ffffff;
 }
 
 .floating-label-form-group label {
@@ -307,6 +314,21 @@ section.success {
     transition: top .3s ease,opacity .3s ease;
 }
 
+/* do not group these rules */
+.floating-label-form-group ::-webkit-input-placeholder {
+    color:    #fff;
+}
+.floating-label-form-group :-moz-placeholder {
+    color:    #fff;
+}
+.floating-label-form-group ::-moz-placeholder {
+    color:    #fff;
+}
+.floating-label-form-group :-ms-input-placeholder {
+    color:    #fff;
+}
+
+
 .floating-label-form-group::not(:first-child) {
     padding-left: 14px;
     border-left: 1px solid #eee;
@@ -318,7 +340,7 @@ section.success {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #18bc9c;
+    color: #ffffff;
 }
 
 form .row:first-child .floating-label-form-group {
