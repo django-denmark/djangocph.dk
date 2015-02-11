@@ -30,6 +30,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'smart_cache_control.middleware.SmartCacheControlMiddleware',
 )
 
 ROOT_URLCONF = 'djangocph_dk.urls'
