@@ -1,3 +1,4 @@
 #Django==1.7.3
 https://www.djangoproject.com/download/1.8a1/tarball/
 django-environ==0.3.0
+django-smartcc
