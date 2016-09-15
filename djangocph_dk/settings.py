@@ -9,7 +9,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
-TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
@@ -59,9 +58,25 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_src'),
 )
 
-TEMPLATE_DIRS = {
-    os.path.join(BASE_DIR, 'templates')
-}
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [os.path.join(os.path.join('..', BASE_DIR), 'templates')],
+        'OPTIONS': {
+            'debug': True,
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_HOST = env('EMAIL_HOST')
