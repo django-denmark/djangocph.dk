@@ -88,3 +88,6 @@ EMAIL_BACKEND = env(
     'EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend'
 )
+
+
+AKISMET_KEY = env('AKISMET_KEY', default=None)
