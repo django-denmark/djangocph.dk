@@ -1,4 +1,5 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +86,7 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                        <span class="skills">Meetups - Events - Teaching</span>
+                        <span class="skills">Meetups - Events - Socialising</span>
                     </div>
                 </div>
             </div>
@@ -104,7 +105,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>We are a voluntary non for profit organization of professional and hobbyists with a shared interest for the Django web framework.</p>
+                    <p>We are a voluntary non for profit organization of professional and hobbyists with a shared passsion for creating sites in the Django web framework.</p>
                 </div>
                 <div class="col-lg-4">
                     <p>We organize events, hackathons and get togethers.</p>
@@ -178,124 +179,21 @@
                     &nbsp;
                 </div>
                 <div class="col-md-8">
-
-                    <div class="event">
-                        <h4>Django Saturday - Open data edition - Hackathon #5</h4>
-                        <p class="date">Saturday, March 28, 2015</p>
-                        <p>This time we have joined forces with the good people from <a href="data.virk.dk">Virk Data</a>.
-                        <p>Together with <a href="virk.dk">Virk.dk</a> (Erhvervsstyrelsen) we will host a hackathon with the focus on open governmental data.</p>
-
-                        <p>For a long time we as developers have wanted more open public data. Now we actually got it.</p>
-
-                        <p>Virk Data currently lists 178 <a href="http://datahub.virk.dk/data/search">datasets</a> and there are many other sources such as http://data.kk.dk/ and http://www.odaa.dk/</p>
-
-                        <p>On the day we will bring historical CVR (central company register) data in a Django friendly form.</p>
-
-                        <p>If you're new to Open Data, then we recommend taking a look at some of the following resources:</p>
-                        <ul>
-                        <li><a href="http://virkdata.gitbooks.io/open-data-school/content/" target="_blank">Virkdata Open Data School</a>
-                        <li><a href="http://nbviewer.ipython.org/gist/fnielsen/56f2ed7c1f35d72762d1" target="_blank">Analysis of Danish financial statements example</a>
-                        <li><a href="http://alstatr.blogspot.ca/2015/02/python-getting-started-with-data.html" target="_blank">Python: Getting Started with Data Analysis</a>
-                        <li><a href="http://goo.gl/uhIE6g" target="_blank">Webjournalistens værktøjskasse - link collection</a>
-                        <li><a href="http://labs.septima.dk/" target="_blank">Inspiring examples of how the data can be used </a>
-                        </ul>
-                        <p>Sign up here: <a href="http://www.meetup.com/The-Copenhagen-Django-Meetup-Group/events/220508243/">http://www.meetup.com/The-Copenhagen-Django-Meetup-Group/events/220508243/</a></p>
-                    </div>
+                        {% for event in future_events %}
+                            {% include "_event.html" %}
+                        {% endfor %}
                 </div>
                 <div class="col-md-12 text-center">
+                    <hr class="star-primary">
                     <h3>Past events</h3>
                 </div>
                 <div class="col-md-2">
                     &nbsp;
                 </div>
                 <div class="col-md-8">
-
-                    <div class="event">
-                        <h4>Meetup #9</h4>
-                        <p class="date">Monday, February 9, 2015</p>
-                        <p>Ernest Jumbe: Something about realtime with SwampDragon[<a href="http://www.slideshare.net/ErnestJumbe/swampdragon-presentation-d" target="_blank">slides</a> / <a href="https://github.com/ernestjumbe/meetupdemo/tree/master" target="_blank">demo</a>]</p>
-                        <p>Lorenzo Setale: How MinbilDinbil are using CloudFlare, Nginx, uWSGI, memcache, Celery to speed up Django [<a href="http://www.slideshare.net/koalalorenzo/minbildinbil-django-speed-tricks" target="_blank">slides</a>]</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #8</h4>
-                        <p class="date">December 8, 2014</p>
-                        <p>Benjamin Bach: Strategies for refactoring and migrating a big old project to be multilingual and use multiple databases or how I learned to stop worrying and search and replace my code base [<a href="http://www.slideshare.net/benjaoming/language-refactoring-talk2" target="_blank">slides</a>]</p>
-                        <p>Martin J. Tschammer: Stripe as a payment provider</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #7</h4>
-                        <p class="date">October 6, 2014</p>
-                        <p>Emil Kjer: What's new in Django 1.7</p>
-                        <p>Ron Cohen: You shipped it, you fix it</p>
-                        <p>Christoffer Kaalund: Vagrant and ansible</p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #4</h4>
-                        <p class="date">April 12, 2014</p>
-                        <p>Free hacking</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #6</h4>
-                        <p class="date">March 26, 2014</p>
-                        <p>Joshua Karjala-Svendsen: simple screen scraping app</p>
-                        <p>Ron Cohen: validation library </p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #3</h4>
-                        <p class="date">November 27, 2013</p>
-                        <p>Free hacking</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #5</h4>
-                        <p class="date">October 30, 2013</p>
-                        <p>Chris Vest: Using Neo4J with Python</p>
-                        <p>Ron Cohen: Have some Celery</p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #2</h4>
-                        <p class="date">September 27, 2013</p>
-                        <p>Django Dash that happens in the same weekend: <a href="http://djangodash.com/" target="_blank">http://djangodash.com/</a></p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #1</h4>
-                        <p class="date">August 28, 2013</p>
-                        <p>Free hacking</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #4</h4>
-                        <p class="date">July 31, 2013</p>
-                        <p>Kristian Øllegaard: Real-time Django with SockJS and Tornado</p>
-                        <p>Vladimir Keleshev: Critique of Python</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #3</h4>
-                        <p class="date">June 26, 2013</p>
-                        <p>Werner Keil: Django-Mobile and possible improvements to the DeviceDetectionMiddleware</p>
-                        <p>Benjamin Bach: stopforumspam [<a href="https://speakerdeck.com/benjaoming/django-stopforumspam/" target="_blank">slides</a>]</p>
-                        <p>Vladimir Keleshev: How to write an interpreter</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #2</h4>
-                        <p class="date">June 5, 2013</p>
-                        <p>Bo Simonsen: Pyramid</p>
-                        <p>Niels Sandholt Busch: Implementing yield management with Django</p>
-                        <p>Vladimir Keleshev: Create beautiful command-line interfaces</p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #1</h4>
-                        <p class="date">May 14, 2013</p>
-                        <p>Tuesday evening a group of us are meeting to setup our "first" Django app and push it to Heroku</p>
-                    </div>
-                    <div class="event">
-                        <h4>Hackathon #0</h4>
-                        <p class="date">April 27, 2013</p>
-                        <p>Free hacking</p>
-                    </div>
-                    <div class="event">
-                        <h4>Meetup #1</h4>
-                        <p class="date">April 24, 2013</p>
-                        <p>Nick Bruun: Lessons learned defying Joel Spolsky with Django [<a href="https://speakerdeck.com/nickbruun/lessons-learned-defying-joel-spolsky-with-django" target="_blank">slides</a>]</p>
-                    </div>
+                        {% for event in past_events %}
+                            {% include "_event.html" %}
+                        {% endfor %}
                 </div>
             </div>
         </div>
@@ -350,7 +248,6 @@
 
     <!-- Contact Form JavaScript -->
     <script src="{% static "js/jqBootstrapValidation.js" %}"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="{% static "js/freelancer.js" %}"></script>
 

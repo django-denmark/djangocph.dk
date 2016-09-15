@@ -4,5 +4,6 @@ from djangocph import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^$', views.IndexView.as_view(), name='home'),
 ]
