@@ -9,7 +9,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
-TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
@@ -20,6 +19,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'markdownx',
+    'events',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,11 +60,34 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_src'),
 )
 
-TEMPLATE_DIRS = {
-    os.path.join(BASE_DIR, 'templates')
-}
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [os.path.join(os.path.join('..', BASE_DIR), 'templates')],
+        'OPTIONS': {
+            'debug': True,
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
-EMAIL_PORT = env('EMAIL_PORT')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT', default=25)
+EMAIL_HOST = env('EMAIL_HOST', default='localhost')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
+EMAIL_BACKEND = env(
+    'EMAIL_BACKEND',
+    default='django.core.mail.backends.console.EmailBackend'
+)
+
+
+AKISMET_KEY = env('AKISMET_KEY', default=None)

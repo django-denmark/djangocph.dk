@@ -1,8 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 from djangocph import views
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^markdownx/', include('markdownx.urls')),
     url(r'^$', views.IndexView.as_view(), name='home'),
-)
+]

@@ -1,0 +1,11 @@
+{% load event_helpers %}
+
+<div class="event">
+    <h4>{{ event.title }}</h4>
+    {% if event.location %}
+    <p class="location"><span class="date">{{ event.start_at }}</span> @ {{ event.location}}</p>
+    {% else %}
+    <p class="date">{{ event.start_at }}</p>
+    {% endif %}
+    <div class="about">{{ event.about|markdownify }}</div>
+ </div>

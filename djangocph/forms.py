@@ -30,7 +30,7 @@ class ContactForm(forms.Form):
         )
 
         send_mail(
-            'Message from {0}'.format(email),
+            '[Djangocph] Message from {0}'.format(email),
             email_message,
             'team@djangocph.com',
             ['team@djangocph.dk'],
