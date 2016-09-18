@@ -10,14 +10,18 @@ class EventManager(models.Manager):
         Filtering by date, showing only show events before today
         """
         now = timezone.now()
-        return self.get_queryset().filter(start_at__date__lt=now.date())
+        return self.get_queryset().filter(
+            start_at__date__lt=now.date()
+        ).order_by('start_at')
 
     def get_future_events(self):
         """
         Filtering by date, showing events `today` as well as future events
         """
         now = timezone.now()
-        return self.get_queryset().filter(start_at__date__gte=now.date())
+        return self.get_queryset().filter(
+            start_at__date__gte=now.date()
+        ).order_by('start_at')
 
 
 class Event(models.Model):
@@ -27,7 +31,7 @@ class Event(models.Model):
 
     objects = EventManager()
 
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=90)
 
     start_at = models.DateTimeField()
     end_at = models.DateTimeField(blank=True, null=True)
