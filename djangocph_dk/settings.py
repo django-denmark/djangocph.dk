@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'markdownx',
     'events',
+    'djangocph',
 )
 
 MIDDLEWARE_CLASSES = (
